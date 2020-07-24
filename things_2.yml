@@ -32,6 +32,8 @@ security:
   basicAuth: []
 - thingsApiToken: []
   BoschID: []
+- thingsApiToken: []
+  SuiteAuth: []
 
 paths:
   ###
@@ -8109,6 +8111,15 @@ components:
           tokenUrl: 'https://things.s-apps.de1.bosch-iot-cloud.com/oauth2/bosch-id/token'
           scopes:
             openid: Access your Bosch-ID
+    SuiteAuth:
+      type: oauth2
+      description: |-
+        Use OAuth2 clients from https://accounts.bosch-iot-suite.com/oauth2-clients/
+      x-tokenName: id_token
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://access.bosch-iot-suit.com/v2/token'
+          scopes: {}
     basicAuth:
       type: http
       description: |-
